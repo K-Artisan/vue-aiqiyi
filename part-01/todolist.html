@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>TodoList</title>
+    <script src="../node_modules/vue/dist/vue.js" ></script>
+<body>
+    <div id="love">
+        <input type="text" v-model="myTodo">
+        <button v-on:click="btnComfir">提交</button>
+        <ul> 
+            <li v-for="item in mylist">{{item}}</li>
+        </ul>
+    </div>
+</body>
+<script>
+    var love = new Vue({
+        el:'#love',
+        data:{
+            mylist:[],
+            myTodo:''
+        },
+        methods: {
+            btnComfir:function (){
+                this.mylist.push(this.myTodo);
+                this.myTodo='';
+           
+            }
+        },
+    })
+</script>
+</head>
+</html>
