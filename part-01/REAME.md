@@ -1,3 +1,38 @@
+
+------------------------------------------------
+
+---
+…or create a new repository on the command line
+echo "# vue-aiqiyi" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/K-Artisan/vue-aiqiyi.git
+git push -u origin master
+
+
+---
+…or push an existing repository from the command line
+git remote add origin https://github.com/K-Artisan/vue-aiqiyi.git
+git push -u origin master
+
+---
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+
+------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 PS F:\Kzone\CodeLib\vue\aiqiyi> git status
 On branch master
 Your branch is up to date with 'origin/master'.
