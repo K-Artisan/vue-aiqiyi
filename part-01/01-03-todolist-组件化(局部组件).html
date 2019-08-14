@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>TodoList</title>
+    <script src="../node_modules/vue/dist/vue.js" ></script>
+<body>
+    <div id="love">
+        <input type="text" v-model="myTodo">
+        <button v-on:click="btnComfir">提交</button>
+        <ul> 
+            <!-- <li v-for="item in mylist">{{item}}</li>  -->
+            <my_cpt_alias v-bind:my_content="item" v-for="item in mylist" ></my_cpt_alias>
+        </ul>
+    </div>
+</body>
+<script>
+
+    // 全局组件 ,组件的名字必须都是小写,
+    // Vue.component('my_cpt', {
+    //     props:['my_content'],//属性名字必须都是小写,
+    //     template:"<li>{{my_content}}</li>"
+    // })
+
+    // 局部组件
+    var my_cpt ={
+        props:['my_content'],//属性名字必须都是小写,
+        template:"<li>{{my_content}}</li>"
+    }
+
+    var love = new Vue({
+        el:'#love',
+        components:{ //注册局部组件
+            my_cpt_alias:my_cpt
+        },
+        data:{
+            mylist:[],
+            myTodo:''
+        },
+        methods: {
+            btnComfir:function (){
+                this.mylist.push(this.myTodo);
+                this.myTodo='';
+           
+            }
+        },
+    })
+</script>
+</head>
+</html>
